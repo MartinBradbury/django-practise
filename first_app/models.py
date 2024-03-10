@@ -18,3 +18,11 @@ class Test(models.Model):
     def __str__(self):
         return self.title
     
+class Space(models.Model):
+    title = models.CharField(max_length=100)
+    body = models.TextField()
+    status = models.IntegerField()
+    flagged = models.BooleanField()
+
+    def __str__(self):
+        return self.title

@@ -1,18 +1,20 @@
 from django.shortcuts import render
-from .models import Test, Article
+from .models import Test, Article, Space
 
 # Create your views here.
 def firstview(request):
-    test = Test.objects.all()
+    tests = Test.objects.all()
     articles = Article.objects.all().order_by('date')
+    space = Space.objects.all().order_by('flagged')
     
     
     return render(
         request,
         "index.html", 
         {
-            'test': test,
+            'tests': tests,
             'articles': articles,
+            'space': space,
             
             
         },
