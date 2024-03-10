@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-f#_jlkfm8#eczwnhu*5)^)-h&6qowpkq@u-f(dk&-0kcl8ar3f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-martinbradb-djangopract-3419br5m3he.ws-eu108.gitpod.io']
+ALLOWED_HOSTS = ['8000-martinbradb-djangopract-3419br5m3he.ws-eu108.gitpod.io',]
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'first_app',
     
 ]
 
@@ -85,6 +86,10 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-martinbradb-djangopract-3419br5m3he.ws-eu108.gitpod.io'
+]
 
 AUTH_PASSWORD_VALIDATORS = [
     {
