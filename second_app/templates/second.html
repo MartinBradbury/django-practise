@@ -10,6 +10,17 @@
 </head>
 <body>
     <p>Hello World</p>
+    <h1>Space</h1>
+    <div class="space">
+        {% for space in space %}
+        <div class="planets">
+            <h2><a href="">{{ space.title }}</a></h2>
+            <p>{{ space.snippet }}</p>
+            <p>{{ space.status }}</p>
+            <p>{{ space.flagged }}</p>
+        </div>
+        {% endfor %}
+    </div>
 
     <script type="text/javascript" src="{% static '/js/script.js' %}"></script>
 </body>
