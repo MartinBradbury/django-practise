@@ -1,52 +1,34 @@
 
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="Description" content="Enter your description here"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link rel="stylesheet" href="{% static '/css/style.css' %}">
-<title>My Test Django App</title>
-</head>
-<body>
-    <h1>Can you read this?</h1>
+{% extends "base_layout.html" %}
 
-    <h1>Test</h1>
-    <div class="pictures">
-        {% for test in tests %}
-        <h2>{{ test.title }}</h2>
-        <p>{{ test.body }}</p>
+{% block content %}
+<h1>Test</h1>
+<div class="pictures">
+    {% for test in tests %}
+    <h2>{{ test.title }}</h2>
+    <p>{{ test.body }}</p>
 
-        {% endfor %}
+    {% endfor %}
+</div>
+<div class="articles">
+    {% for article in articles %}
+    <div class="article">
+        <h2><a href="">{{ article.title }}</a></h2>
+        <p>{{ article.body }}</p>
+        <p>{{ article.date }}</p>
     </div>
-    <div class="articles">
-        {% for article in articles %}
-        <div class="article">
-            <h2><a href="">{{ article.title }}</a></h2>
-            <p>{{ article.body }}</p>
-            <p>{{ article.date }}</p>
-        </div>
-        {% endfor %}
+    {% endfor %}
+</div>
+<h1>Space</h1>
+<div class="space">
+    {% for space in space %}
+    <div class="planets">
+        <h2><a href="">{{ space.title }}</a></h2>
+        <p>{{ space.body }}</p>
+        <p>{{ space.status }}</p>
+        <p>{{ space.flagged }}</p>
     </div>
-    <h1>Space</h1>
-    <div class="space">
-        {% for space in space %}
-        <div class="planets">
-            <h2><a href="">{{ space.title }}</a></h2>
-            <p>{{ space.body }}</p>
-            <p>{{ space.status }}</p>
-            <p>{{ space.flagged }}</p>
-        </div>
-        {% endfor %}
-    </div>
+    {% endfor %}
+</div>
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="{% static '/js/script.js' %}"></script>
-</body>
-</html>
+{% endblock %}

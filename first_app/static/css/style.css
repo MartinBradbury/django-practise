@@ -6,3 +6,5 @@
 h1 {
     color: white;
 }
+
+#map { position:absolute; top:0; bottom:0; width:100%; }

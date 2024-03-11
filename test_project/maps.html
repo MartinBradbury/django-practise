@@ -1,25 +1,22 @@
-{% extends "base_layout.html" %}
-
-{% block content %}
-
-    <p>Hello World</p>
-    <h1>Space</h1>
-    <div class="space">
-        {% for space in space %}
-        <div class="planets">
-            <h2><a href="">{{ space.title }}</a></h2>
-            <p>{{ space.snippet }}</p>
-            <p>{{ space.status }}</p>
-            <p>{{ space.flagged }}</p>
-        </div>
-        {% endfor %}
-    </div>
-
-{% endblock %}
-    <!-- <div>
-        <h1>Maps</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>OS Maps API | Basic Map ZXY (EPSG:3857) | MapLibre GL JS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OrdnanceSurvey/os-api-branding@0.3.1/os-api-branding.css" />
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css" />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
 
 <div id="map"></div>
+
+<script src="https://cdn.jsdelivr.net/gh/OrdnanceSurvey/os-api-branding@0.3.1/os-api-branding.js"></script>
+<script src="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
 <script>
 
     const apiKey = 'HMEY6vWRioll4rhP5rBHRcAKCXvsUEti';
@@ -65,10 +62,5 @@
 
 </script>
 
-
-
-
-
-
-    </div>
-     -->
+</body>
+</html>
